@@ -1,4 +1,4 @@
-@extends('layout.main')
+@extends('default.main')
     @section('content')
         <h1>{{ config('blog.title') }}</h1>
         <h2>Page {{ $posts->currentPage() }} of {{ $posts->lastPage() }}</h2>
