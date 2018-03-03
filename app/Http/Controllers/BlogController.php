@@ -19,6 +19,6 @@ class BlogController extends Controller
     public function singleBlogPost($slug){
         $post = Post::whereSlug($slug)->firstOrFail();
 
-        return view('blog.post')->withPost($post);
+        return view('blog.single')->withPost($post);
     }
 }
