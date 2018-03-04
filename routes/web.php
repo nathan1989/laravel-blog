@@ -11,17 +11,22 @@
 |
 */
 
+// homepage
 Route::get('/', function () {
     return view('home');
 });
 
+// redirect default home
+Route::get('/home', 'HomeController@index')->name('home');
+
+// blog views
 Route::get('blog', 'BlogController@allBlogPosts');
 Route::get('blog/{slug}', 'BlogController@singleBlogPost');
 
+// in built authorisation
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/admin', function () {
-    return view('admin.index');
-})->middleware('auth');
+// admin views
+Route::group(['middleware' => 'auth'], function() {
+    Route::resource('/admin', 'AdminController');
+});
