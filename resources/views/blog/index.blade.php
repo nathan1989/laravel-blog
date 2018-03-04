@@ -13,5 +13,5 @@
             @endforeach
             </article>
         </section>
-        {{!! $posts->render() !!}}
+        {!! $posts->render() !!}
     @stop

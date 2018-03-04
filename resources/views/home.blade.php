@@ -7,7 +7,7 @@
         </div>
     @endif    
     <h1>Welcome to my app</h1>
-    @if (!Auth::guest())
-    <p>Hello {{ Auth::user()->name }}!</p>
-    @endif
+    @auth
+        <p>Hello {{ Auth::user()->name }}!</p>
+    @endauth
 @endsection
