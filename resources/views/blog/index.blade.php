@@ -6,7 +6,7 @@
             @foreach($posts as $post)
             <article>
                 <h3><a href="/blog/{{ $post->slug }}">{{ $post->title }}</a></h3>
-                <p><strong> {{ $post->published_at->format('jS M Y') }} at {{ $post->published_at->format('g:ia') }} </strong></p>
+                <p><strong> {{ $post->published_at->format('jS M Y') }}</strong></p>
                 <div>
                     {{ str_limit($post->content) }}
                 </div>

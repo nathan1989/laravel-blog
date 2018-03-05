@@ -30,8 +30,9 @@
                             <td><a href="/blog/{{ $post->slug }}">{{ $post->title }}</a></td>
                             <td><a href="/admin/{{ $post->id }}/edit" class="btn btn-primary">Edit post</a></td>
                             <td>
-                                <form action="/admin/delete/{{ $post->id }}" method="DELETE">
+                                <form action="/admin/{{ $post->id }}" method="POST">
                                     <input type="hidden" name="_method" value="DELETE">
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     <input type="submit" class="btn btn-danger" value="Delete post">
                                 </form>
                             </td>
